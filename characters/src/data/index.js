@@ -3,10 +3,7 @@ const axios = require("axios");
 
 module.exports = {
     list: async () => {
-        const result = await axios.get("http://database:8004/Character");
-        console.log(result)
-        const charactersFromDb = result.data;
-        return charactersFromDb;
+        return await axios.get("http://database:8004/Character");
     },
     getById: async (id) => {
         return await axios.get(`http://database:8004/Character/${id}`);

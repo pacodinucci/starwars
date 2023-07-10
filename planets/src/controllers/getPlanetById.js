@@ -2,6 +2,7 @@ const Planet = require('../data');
 const { response } = require('../utils');
 
 module.exports = async (req, res) => {
-    const newPlanet = await Planet.create();
-    response(res, 201, newPlanet.data);
-};
+    const { id } = req.params;
+    const planets = await Planet.getById(id);
+    response(res, 200, planets.data);
+}

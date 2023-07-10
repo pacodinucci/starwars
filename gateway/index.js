@@ -5,6 +5,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const app = express();
 
 app.use(morgan('dev'));
+// app.use(express.json());
 
 app.use('/characters', createProxyMiddleware({
     target: 'http://characters:8001',

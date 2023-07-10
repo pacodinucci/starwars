@@ -1,10 +1,14 @@
 const films = require('./films.json');
+const axios = require('axios');
 
 module.exports = {
     list: async () => {
-        return films;
+        return await axios.get("http://database:8004/Film");
     },
-    create: async () => {
-        throw Error("Hay un error en la BDD al momento de crear la pelicula");
+    getById: async (id) => {
+        return await axios.get(`http://database:8004/Film/${id}`); 
+    },
+    create: async (object) => {
+        return await axios.post("http://database:8004/Film", object);
     }
 }

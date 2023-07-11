@@ -1,7 +1,9 @@
 const server = require('./src/server');
-const { PORT } = require("./src/config/envs");
+// const { PORT } = require("./src/config/envs");
 
 const { Character, Film } = require("./src/database");
+
+const PORT = 8004
 
 // Character.list().then((res) => console.log(res));
 // Character.get(24).then((res) => console.log(res));

@@ -5,10 +5,16 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+
 
 app.use(morgan('dev'));
-// app.use(express.json());
+app.use(express.json());
+
+const corsOptions = {
+    origin: 'http://localhost:5173'
+};
+
+app.use(cors(corsOptions));
 
 app.use('/characters', createProxyMiddleware({
     target: 'http://characters:8001',

@@ -16,7 +16,7 @@ const corsOptions = {
     credentials: true
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use('/characters', createProxyMiddleware({
     target: 'http://characters:8001',
@@ -32,11 +32,6 @@ app.use('/planets', createProxyMiddleware({
     target: 'http://planets:8003',
     changeOrigin: true,
 }));
-
-// app.use('/database', createProxyMiddleware({
-//     target: 'http://database:8004',
-//     changeOrigin: true,
-// }));
 
 app.listen(8000, () => {
     console.log('Gateway on port 8000');

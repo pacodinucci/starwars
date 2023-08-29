@@ -1,10 +1,7 @@
 const server = require('./src/server');
 // const { PORT } = require("./src/config/envs");
-const cors = require('cors');
 
 const { Character, Film } = require("./src/database");
-
-// server.use(cors());
 
 const PORT = 8004
 

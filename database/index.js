@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const { Character, Film } = require("./src/database");
 
-server.use(cors());
+// server.use(cors());
 
 const PORT = 8004
 
